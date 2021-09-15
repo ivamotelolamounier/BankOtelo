@@ -11,6 +11,7 @@ class Peoples {
         var number : String = ""
     }
 
+    fun concacternate() = "$name  $cpf"
 }
 
 fun main(){
@@ -19,10 +20,12 @@ fun main(){
     var enderecos = Peoples().Adress().adress
     var numero = Peoples().Adress().number
 
-    enderecos = "Avenida Principal"
+    enderecos = "Avenida Principal,"
     numero = "23"
 
     println("Nome: ${pessoas.name}")
     println("CPF nº: ${pessoas.cpf}")
-    println("Endereço: ${enderecos}  " + "nº" + " ${numero}")
+    println("Endereço: $enderecos  nº $numero")
+
+    println(pessoas.concacternate())
 }
