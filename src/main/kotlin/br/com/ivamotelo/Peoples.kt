@@ -1,31 +1,17 @@
 package br.com.ivamotelo
 
-class Peoples {
-
-    var name : String = "Ivam"
-    var cpf :  String = "123456789"
-    private set
+abstract class Peoples (
+    open val name : String,
+    open val cpf :  String
+){
+    val s = ""
 
     inner class Adress {
-        var adress : String = ""
-        var number : String = ""
+       var adress : String = s
+       var number : String = s
     }
-
-    fun concacternate() = "$name  $cpf"
-}
-
-fun main(){
-
-    val pessoas = Peoples()
-    var enderecos = Peoples().Adress().adress
-    var numero = Peoples().Adress().number
-
-    enderecos = "Avenida Principal,"
-    numero = "23"
-
-    println("Nome: ${pessoas.name}")
-    println("CPF nº: ${pessoas.cpf}")
-    println("Endereço: $enderecos  nº $numero")
-
-    println(pessoas.concacternate())
+    fun concacternate(): String {
+       val concactena = "$name  $cpf"
+        return concactena
+    }
 }
