@@ -1,12 +1,19 @@
 package br.com.ivamotelo
-import br.com.ivamotelo.Peoples
-import java.math.BigDecimal
 
 abstract class Employees(
     override val name: String,   // Caracteristica geral de uma pessoa
     override val cpf: String,    // Caracteristica geral de uma pessoa
-    val wage: BigDecimal         // Caracteristica específica de um funcionário
+    val wage: Double             // Caracteristica específica de um funcionário
     ): Peoples(name, cpf){       // Funcionário herdou caracteristicas da classe abstrata Peoples
 
-        abstract fun benefits()  //comportamento específico de um funcionário
-}
+   protected abstract fun benefits(): Double  //comportamento específico de um funcionário, 'protected' garante
+                                              // que apenas a classe mãe e filhos façam seu uso
+
+   //Observe que a função está no corpo da classe herdadda, especializada
+    override fun toString(): String = """
+        Nome: $name
+        CPF nº: $cpf
+        Salário: $wage
+        Auxílio: ${benefits()}  
+        """.trimIndent()
+    }
