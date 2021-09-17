@@ -1,5 +1,4 @@
 package br.com.ivamotelo
-import br.com.ivamotelo.Logins
 
 class Managers(
     name: String,
@@ -8,7 +7,10 @@ class Managers(
     val senha: String
 ): Employees(name = name, cpf = cpf, wage = wage), Logins {
 
-    override fun benefits(): Double = wage * 0.4     // Especialização da classe Managers
-
-    override fun login(): Boolean = "senha1234" == senha  // Especialização da classe Managers
+    override fun benefits(): Double { // Especialização da classe Managers
+        var d: Double = 0.4
+        return wage * d
     }
+
+    override fun login(): Boolean = "senha1234" == senha // Retorna falso ou verdadeiro
+}

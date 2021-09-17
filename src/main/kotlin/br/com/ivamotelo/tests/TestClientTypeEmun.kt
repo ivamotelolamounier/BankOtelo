@@ -1,26 +1,26 @@
 package br.com.ivamotelo.tests
-import br.com.ivamotelo.ClientType
+import br.com.ivamotelo.CustomersTypes
 
 
 fun main() {
 
     // manipulando o objeto diretamente
-    ClientType.values().forEach { typeclient ->
+    CustomersTypes.values().forEach { typeclient ->
         println(message = typeclient.name + " - " + typeclient.clientDescription)
     }
 
-    ClientType.values().forEach {
+    CustomersTypes.values().forEach {
         println(message = it.name +" - "+ it.clientDescription)
     }
 
-    ClientType.values().forEach {
+    CustomersTypes.values().forEach {
         println("${it.name} >> ${it.clientDescription}")
     }
 
     // Atribuindo o objeto a uma varíavel
-    val pf = ClientType.PF
+    val pf = CustomersTypes.PF
     println(pf.name + " - " + pf.clientDescription)
 
-    val pj = ClientType.PJ
+    val pj = CustomersTypes.PJ
     println(pj.name + " - " + pj.clientDescription)
 }
